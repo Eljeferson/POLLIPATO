@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingresar</title>
+</head>
+<link rel="stylesheet" type="text/css" href="{% static 'ingresar.csss' %}">
+<body>
+    <section>
+        <div class="form-box">
+            <div class="form-value">
+                <form method="post" action="{% url 'inicio:ingresar' %}">
+                    <h2>Ingresar</h2>
+                        {% csrf_token %}
+                        <div class= "inputbox">
+                            <span class="icon">
+                                <ion-icon name="mail-outline"></ion-icon>
+                            </span>
+                            <input type="text" id="usuario" name="usuario" required>
+                            <label for="usuario">Usuario</label>
+                        </div>
+                        <div class= "inputbox">
+                            <span class="icon">
+                                <ion-icon name="lock-closed-outline"></ion-icon>
+                            </span>
+                            <input type="password" id="contraseña" name="contraseña" required>
+                            <label for="contraseña">Contraseña</label>
+                        </div> 
+                        <button type="submit">Ingresar</button>
+                        <div class="register">
+                            <p>No tienes una cuenta?  <a href={% url 'inicio:crear_cuenta' %}>Registrate</a></p>
+                        </div>    
+                </form>
+            </div>
+        </div>                
+    </section> 
+</body>
+</html>
