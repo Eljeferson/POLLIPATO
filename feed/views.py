@@ -79,7 +79,7 @@ def feedIncognito(request):
     else:
         form = None
 
-    return render(request, 'feed_Incg.html', {'nombre_incognito': nombre_incognito, 'apellido_incognito': apellido_incognito, 'publicaciones_combinadas': publicaciones_combinadas, 'form': PublicacionIncognitoForm(), 'especialistas': especialistas})
+    return render(request, 'feed_Incg.html', {'nombre_incognito': nombre_incognito, 'apellido_incognito': apellido_incognito, 'publicaciones_combinadas': publicaciones_combinadas, 'form': form, 'especialistas': especialistas})
 
 
 
