@@ -86,26 +86,24 @@
                 {% endif %}
 
                 <h2>PERSONAL</h2>
-                <div class="overflow-auto" style="max-height: 490px; width: 366px;">
+                <div class="overflow-y-auto " style="max-height: 490px; width: 366px;" >
                     <div class="toast-container position-static">
                         {% for publicacion in publicaciones_combinadas %}
                             {% if publicacion.usuario == usuario %}
-                                <div class="toast fade show" role="alert" aria-live="assertive" aria-atomic="true">
-                                    <div class="publicacion">
-                                        <div class="toast-header">
-                                            <svg class="bd-placeholder-img rounded me-2" width="30" height="30" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
-                                                {% if publicacion.usuario.foto_perfil %}
-                                                <image href="{{ publicacion.usuario.foto_perfil.url }}" alt="Foto de perfil" width="40" height="40"/>
-                                                {% else %}
-                                                <image href="/media/fotos_incognito/incognito.jpg" alt="Foto de perfil" width="40" height="40"/>
-                                                {% endif %}
-                                            </svg>                
-                                            <strong class="me-auto">{{ publicacion.usuario.nombre }} {{ publicacion.usuario.apellido }}</strong>
-                                            <small>{{ publicacion.fecha_creacion }}</small>
-                                        </div>
-                                        <div class="toast-body">
-                                            {{ publicacion.publicacion }}
-                                        </div>
+                                <div class="toast fade show" >
+                                    <div class="toast-header"style="background-color: #252727; border-radius: 18px;">
+                                        <svg class="bd-placeholder-img rounded-circle me-2" width="29" height="29" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+                                            {% if publicacion.usuario.foto_perfil %}
+                                            <image href="{{ publicacion.usuario.foto_perfil.url }}" alt="Foto de perfil" width="30" height="30"/>
+                                            {% else %}
+                                            <image href="/media/fotos_incognito/incognito.jpg" alt="Foto de perfil" width="30" height="30"/>
+                                            {% endif %}
+                                        </svg>                
+                                        <strong class="me-auto">{{ publicacion.usuario.nombre }} {{ publicacion.usuario.apellido }}</strong>
+                                        <small class="colores">{{ publicacion.fecha_creacion }}</small>
+                                    </div>
+                                    <div class="toast-body">
+                                        {{ publicacion.publicacion }}
                                     </div>
                                 </div>
                             {% endif %}

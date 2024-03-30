@@ -56,7 +56,11 @@ def feedIncognito(request):
         contenido = request.POST.get('contenido')
 
         if nombre_incognito and apellido_incognito:
-            usuario_efimero, _ = UsuarioEfimero.objects.get_or_create(nombre=nombre_incognito, apellido=apellido_incognito)
+            usuarios_efimero = UsuarioEfimero.objects.filter(nombre=nombre_incognito, apellido=apellido_incognito)
+            if usuarios_efimero.exists():
+                usuario_efimero = usuarios_efimero.first()  # o el que prefieras usar
+            else:
+                usuario_efimero = UsuarioEfimero.objects.create(nombre=nombre_incognito, apellido=apellido_incognito)
             
             publicacion_efimero = PublicacionEfimero(usuario=usuario_efimero, publicacion=contenido)
             publicacion_efimero.save()
