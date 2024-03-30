@@ -32,9 +32,44 @@
 
 .reduce-left-margin {
     margin-left: -19px;
-
 }
 
 .my-2 {
     border-bottom: 1px solid #ccc; 
+}
+
+.overflow-y-auto {
+    max-height: 640px;
+    width: 480px;
+    background-color: #18191A;
+}
+
+.overflow-y-auto::-webkit-scrollbar {
+    width: 9px; 
+    background-color: #18191A;
+    display: none; 
+}
+
+.overflow-y-auto:hover::-webkit-scrollbar {
+    display: block; 
+}
+
+.overflow-y-auto::-webkit-scrollbar-thumb {
+    background-color: #3D3D3D;
+    border-radius: 9px; 
+}
+
+.toast.show {
+    width: 600px;
+    background-color: #434747;
+    border-radius: 20px;
+}
+
+
+.me-auto {
+    color : #fff;
+}
+
+.colores {
+    color : #fff;
 }
