@@ -24,9 +24,10 @@ class Especialista(models.Model):
     apellido = models.CharField(max_length=50, default='')
     celular = models.CharField(max_length=50, default='')
     email = models.EmailField(blank=True)
-    enlace_linkedin = models.URLField(blank=True)
-    enlace_instagram = models.URLField(blank=True)
-    enlace_tiktok = models.URLField(blank=True)
+    nombre_linkedin = models.CharField(max_length=50, default='')
+    nombre_instagram = models.CharField(max_length=50, default='')
+    nombre_facebook = models.CharField(max_length=50, default='')
+    nombre_tiktok = models.CharField(max_length=50, default='')
     orden = models.IntegerField(default=0)
     fecha_creacion = models.DateTimeField(default=timezone.now)
     def __str__(self):
